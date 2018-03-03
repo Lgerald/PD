@@ -6,7 +6,6 @@ const Message = require('./message')
  * If we had any associations to make, this would be a great place to put them!
  * ex. if we had another model called BlogPost, we might say:
  *
- *    BlogPost.belongsTo(User)
  * user has matches
  * matches belongs to user
  * messagesbelong to user
@@ -14,6 +13,9 @@ const Message = require('./message')
  * 
  *    
  */
+User.hasMany(Matches, {foreignKey: 'selector'})
+Message.belongsTo(User)
+Matches.belongsTo(User, {foreignKey: 'selected'})
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
