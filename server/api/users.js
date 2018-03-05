@@ -20,6 +20,7 @@ router.get('/:userId', (req, res, next) => {
   .catch(next)
 })
 
+
 //POST: new user
 router.post('/', (req, res, next) => {
   User.create(req.body)
@@ -29,7 +30,7 @@ router.post('/', (req, res, next) => {
 
 //Update: all user
 router.put('/:userId', (req, res, next) => {
-  User.update(req.body, {where: {id: req.params.userId}, returning: true, raw: true})
+  User.update(req.body, {where: {id: req.params.userId}, returning: true})
   .spread((numrows, updatedUser) => res.json(updatedUser))
   .catch(next)
 })
