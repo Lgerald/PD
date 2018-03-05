@@ -14,7 +14,8 @@ const Message = require('./message')
  *    
  */
 User.hasMany(Matches, {foreignKey: 'selector'})
-Message.belongsTo(User)
+Message.belongsTo(User, {foreignKey: 'from'})
+Message.belongsTo(User, {foreignKey: 'to'})
 Matches.belongsTo(User, {foreignKey: 'selected'})
 
 /**
