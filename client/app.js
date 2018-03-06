@@ -7,8 +7,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import {Navbar, Footer} from './components'
 import Routes from './routes'
 
-
-
 const App = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
       <div>
