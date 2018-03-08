@@ -39,6 +39,9 @@ const User = db.define('user', {
   },
   borough: {
     type: Sequelize.STRING
+  },
+  image: {
+    type: Sequelize.STRING
   }
 
 })
