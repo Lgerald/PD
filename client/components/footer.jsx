@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import FontIcon from 'material-ui/FontIcon';
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
-import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
+import MatchHome from 'material-ui/svg-icons/action/thumbs-up-down';
+import ChatHome from 'material-ui/svg-icons/communication/chat'
+import MySettings from 'material-ui/svg-icons/action/settings'
 
-const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-const nearbyIcon = <IconLocationOn />;
+const Chat = <ChatHome />
+const MatchCenter = <MatchHome />;
+const Settings = <MySettings />
 
 /**
  * A simple example of `BottomNavigation`, with three labels and icons
@@ -25,18 +27,18 @@ class BottomNav extends Component {
             <Paper zDepth={1}>
                 <BottomNavigation selectedIndex={this.state.selectedIndex}>
                     <BottomNavigationItem
-                        label="Recents"
-                        icon={recentsIcon}
+                        label="settings"
+                        icon={Settings}
                         onClick={() => this.select(0)}
                     />
                     <BottomNavigationItem
-                        label="Favorites"
-                        icon={favoritesIcon}
+                        label="Matches"
+                        icon={MatchCenter}
                         onClick={() => this.select(1)}
                     />
                     <BottomNavigationItem
-                        label="Nearby"
-                        icon={nearbyIcon}
+                        label="messages"
+                        icon={Chat}
                         onClick={() => this.select(2)}
                     />
                 </BottomNavigation>

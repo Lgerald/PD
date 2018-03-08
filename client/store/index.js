@@ -6,7 +6,7 @@ import user from './user'
 import matches from './matches'
 import messages from './messages'
 
-const reducer = combineReducers({user, matches, messages})
+const reducer = combineReducers({user})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})

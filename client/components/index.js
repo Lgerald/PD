@@ -4,6 +4,6 @@
  * having to figure out which file they belong to!
  */
 export {default as Navbar} from './navbar'
-export {default as UserHome} from './user-home.jsx'
+export {default as UserHome} from './User/user-home.jsx'
 export {Login, Signup} from './auth-form'
 export {default as Footer} from './footer.jsx'
