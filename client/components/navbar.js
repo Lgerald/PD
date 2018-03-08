@@ -4,27 +4,35 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
+import Home from 'material-ui/svg-icons/action/home'
+import Logout from 'material-ui/svg-icons/content/remove-circle'
+import Login from 'material-ui/svg-icons/content/add-circle'
+import Signup from 'material-ui/svg-icons/action/check-circle'
+
+const homeButton = <Home color="black" />
+const logoutButton = <Logout color="black" />
+const loginButton = <Login color="black" />
+const signupButton = <Signup color="black" />
+
 const Navbar = ({ handleClick, isLoggedIn }) => (
   <div>
-    <h1>PlayDate</h1>
     <nav>
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
+          <Link to="/home">{homeButton}</Link>
           <a href="#" onClick={handleClick}>
-            Logout
+            {logoutButton}
           </a>
         </div>
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/login">{loginButton}</Link>
+          <Link to="/signup">{signupButton}</Link>
         </div>
       )}
     </nav>
-    <hr />
   </div>
 )
 

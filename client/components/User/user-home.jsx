@@ -6,14 +6,16 @@ import {connect} from 'react-redux'
 
 import Settings from './settings.jsx'
 import Preference from './preference.jsx'
+import Profile from './profile.jsx'
 /**
  * COMPONENT
  */
 export const UserHome = (props) => {
-  const { user } = props
+  //const { name, userName } = props.user
   return (
     <div>
-      <h3>Welcome, {user.name || user.userName}</h3>   
+      <h3>Welcome</h3>
+      <Profile />
       <Settings />
       <Preference />
     </div>
@@ -34,6 +36,6 @@ export default connect(mapState)(UserHome)
 /**
  * PROP TYPES
  */
-UserHome.propTypes = {
-  user: PropTypes.string
-}
+// UserHome.propTypes = {
+//   user: PropTypes.string
+// }

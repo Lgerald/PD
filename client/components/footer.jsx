@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FontIcon from 'material-ui/FontIcon';
+import { Link } from 'react-router-dom'
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
 import MatchHome from 'material-ui/svg-icons/action/thumbs-up-down';
@@ -15,36 +15,25 @@ const Settings = <MySettings />
  * provided. The selected `BottomNavigationItem` is determined by application
  * state (for instance, by the URL).
  */
-class BottomNav extends Component {
-    state = {
-        selectedIndex: 0,
-    };
-
-    select = (index) => this.setState({ selectedIndex: index });
-
-    render() {
+const BottomNav = () => {
         return (
             <Paper zDepth={1}>
-                <BottomNavigation selectedIndex={this.state.selectedIndex}>
-                    <BottomNavigationItem
+                <BottomNavigation>
+                    <Link to="/home"><BottomNavigationItem
                         label="settings"
                         icon={Settings}
-                        onClick={() => this.select(0)}
-                    />
-                    <BottomNavigationItem
+                    /></Link>
+                    <Link to="/matches"><BottomNavigationItem
                         label="Matches"
                         icon={MatchCenter}
-                        onClick={() => this.select(1)}
-                    />
-                    <BottomNavigationItem
+                    /></Link>
+                    <Link to="/messages"><BottomNavigationItem
                         label="messages"
                         icon={Chat}
-                        onClick={() => this.select(2)}
-                    />
+                    /></Link>
                 </BottomNavigation>
             </Paper>
         );
-    }
 }
 
 export default BottomNav
