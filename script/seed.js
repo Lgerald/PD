@@ -31,11 +31,11 @@ async function seed () {
     User.create({ email: 'Julia@email.com', userName: 'baby_Jaspers', age: 23, borough: 'Brooklyn', image: "https://s-i.huffpost.com/gadgets/slideshows/283408/slide_283408_2160763_free.jpg", password: '123' })
   ])
   const matches = await Promise.all([
-    Matches.create({round: 1, selector: 5, selected: 3}),
-    Matches.create({ round: 1, selector: 2, selected: 4}),
-    Matches.create({ round: 2, selector: 9, selected: 7}),
-    Matches.create({ round: 3, selector: 7, selected: 2}),
-    Matches.create({ round: 3, selector: 10, selected: 5})
+    Matches.create({ Round: 1, selector: 5, selected: 3}),
+    Matches.create({ Round: 1, selector: 2, selected: 4}),
+    Matches.create({ Round: 2, selector: 9, selected: 7}),
+    Matches.create({ Round: 3, selector: 7, selected: 2}),
+    Matches.create({ Round: 3, selector: 10, selected: 5})
 
   ])
   // const messages = await Promise.all([
