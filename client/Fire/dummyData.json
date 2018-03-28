@@ -1,0 +1,181 @@
+{
+  "drawings": {
+    "drawing1": {
+      "drawingId": 1,
+      "completed": true,
+      "category": "body",
+      "panels": ["panel1", "panel2", "panel3"],
+      "user1": true,
+      "user2": true,
+      "user3": true,
+      "authors": ["Cara", "Kat", "Sazi"],
+      "finishedImgUrl":
+        "https://designerdoginfo.files.wordpress.com/2013/01/cavoodle-puppy-8.jpg?w=584"
+    },
+    "drawing2": {
+      "drawingId": 2,
+      "completed": true,
+      "category": "landscape",
+      "panels": ["panel4", "panel5", "panel6"],
+      "user1": true,
+      "user2": true,
+      "user4": true,
+      "authors": ["Cara", "Kat", "Sara"],
+      "finishedImgUrl":
+        "https://pbs.twimg.com/profile_images/331799757/PuppyRunnning_400x400.jpg"
+    },
+    "drawing3": {
+      "drawingId": 3,
+      "completed": false,
+      "category": "animal",
+      "panels": ["panel7"],
+      "user1": true,
+      "authors": ["Cara"],
+      "finishedImgUrl":
+        "https://pbs.twimg.com/profile_images/836837459975602176/hLZd5ka3_400x400.jpg"
+    }
+  },
+  "snippets": {
+    "snippet1": {
+      "snippetId": 1,
+      "fromPanel": "panel1",
+      "toPanel": "panel2",
+      "snippetImgUrl":
+        "https://mmbiz.qpic.cn/mmbiz/Dh4boGIv2uLcElLm6MY3JQJMfVGYolSgqzezPcvsPo12vQTYc6Bu2PEGItVKkcOyNZsHjicWL2sYIe3q4etEODQ/0?wxfrom=5"
+    },
+    "snippet2": {
+      "snippetId": 2,
+      "fromPanel": "panel2",
+      "toPanel": "panel3",
+      "snippetImgUrl":
+        "https://www.washcoll.edu/live/image/gid/200/width/400/height/40/crop/1/15935_14.jpg"
+    },
+    "snippet3": {
+      "snippetId": 3,
+      "fromPanel": "panel4",
+      "toPanel": "panel5",
+      "snippetImgUrl":
+        "https://edge.media.datahc.com/Y2827024.jpg?v=-1923456403"
+    },
+    "snippet4": {
+      "snippetId": 4,
+      "fromPanel": "panel5",
+      "toPanel": "panel6",
+      "snippetImgUrl":
+        "https://1.bp.blogspot.com/_uqF2WKVkab4/RbE-wnNb4cI/AAAAAAAAABc/6JA6xSa-MPY/s400/composition.jpg"
+    },
+    "snippet5": {
+      "snippetId": 5,
+      "fromPanel": "panel7",
+      "snippetImgUrl": "https://i.imgur.com/SJnl84w.jpg"
+    }
+  },
+  "users": {
+    "user2": {
+      "userId": "2",
+      "name": "Kat",
+      "email": "kat@kat.com",
+      "password": "123"
+    },
+    "user4": {
+      "userId": "4",
+      "name": "Sara",
+      "email": "sara@sara.com",
+      "password": "123"
+    },
+    "user1": {
+      "userId": "1",
+      "name": "Cara",
+      "email": "cara@cara.com",
+      "password": "123"
+    },
+    "user3": {
+      "userId": "3",
+      "name": "Sara",
+      "email": "sara@sara.com",
+      "password": "123"
+    }
+  },
+  "panels": {
+    "panel1": {
+      "panelId": "1",
+      "panelOrder": "1",
+      "category": "body",
+      "completed": true,
+      "artist": "Cara",
+      "drawing": "drawing1"
+    },
+    "panel2": {
+      "panelId": "2",
+      "panelOrder": "2",
+      "category": "body",
+      "completed": true,
+      "artist": "Kat",
+      "drawing": "drawing1"
+    },
+    "panel3": {
+      "panelId": "3",
+      "panelOrder": "3",
+      "category": "body",
+      "completed": true,
+      "artist": "Sazi",
+      "drawing": "drawing1"
+    },
+
+    "panel4": {
+      "panelId": "4",
+      "panelOrder": "1",
+      "category": "landscape",
+      "completed": true,
+      "artist": "Cara",
+      "drawing": "drawing2"
+    },
+    "panel5": {
+      "panelId": "5",
+      "panelOrder": "2",
+      "category": "landscape",
+      "completed": true,
+      "artist": "Kat",
+      "drawing": "drawing2"
+    },
+    "panel6": {
+      "panelId": "6",
+      "panelOrder": "3",
+      "category": "landscape",
+      "completed": true,
+      "artist": "Sara",
+      "drawing": "drawing2"
+    },
+
+    "panel7": {
+      "panelId": "7",
+      "panelOrder": "1",
+      "category": "animal",
+      "completed": false,
+      "artist": "Cara",
+      "drawing": "drawing3"
+    }
+  },
+  "friends": {
+    "user1": {
+      "user2": true,
+      "user3": true,
+      "user4": true
+    },
+    "user2": {
+      "user1": true,
+      "user3": true,
+      "user4": true
+    },
+    "user3": {
+      "user1": true,
+      "user2": true,
+      "user4": true
+    },
+    "user4": {
+      "user1": true,
+      "user3": true,
+      "user2": true
+    }
+  }
+}
