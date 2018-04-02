@@ -2,22 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
-
-
 import Settings from './settings.jsx'
-import Preference from './preference.jsx'
+import Preferences from './preferences'
 import Profile from './profile.jsx'
 /**
  * COMPONENT
  */
-export const UserHome = (props) => {
+export const UserHome = props => {
   //const { name, userName } = props.user
   return (
     <div>
       <h3>Welcome</h3>
       <Profile />
       <Settings />
-      <Preference />
+      <Preferences />
     </div>
   )
 }
@@ -25,7 +23,7 @@ export const UserHome = (props) => {
 /**
  * CONTAINER
  */
-const mapState = (state) => {
+const mapState = state => {
   return {
     user: state.user
   }
