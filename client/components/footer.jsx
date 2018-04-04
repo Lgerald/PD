@@ -10,6 +10,10 @@ const Chat = <ChatHome />
 const MatchCenter = <MatchHome />;
 const Settings = <MySettings />
 
+const Style = {
+    position: 'absolute',
+    bottom: 0
+}
 /**
  * A simple example of `BottomNavigation`, with three labels and icons
  * provided. The selected `BottomNavigationItem` is determined by application
@@ -18,7 +22,7 @@ const Settings = <MySettings />
 const BottomNav = () => {
         return (
             <Paper zDepth={1}>
-                <BottomNavigation>
+                <BottomNavigation style={Style}>
                     <Link to="/home"><BottomNavigationItem
                         label="settings"
                         icon={Settings}
