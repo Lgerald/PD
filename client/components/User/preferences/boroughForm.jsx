@@ -25,7 +25,7 @@ const BoroughForm = createClass({
     })
   },
 
-  render() {
+  render: function() {
     const {disabled, stayOpen, value, removeSelected} = this.state
     const options = [
       {label: 'Manhattan', value: 'Manhattan'},
@@ -55,6 +55,8 @@ const BoroughForm = createClass({
 })
 
 export default BoroughForm
+
+// export default BoroughForm
 
 // Preference.propTypes = {
 //   options: {
