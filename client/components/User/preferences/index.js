@@ -1,11 +1,13 @@
 import React from 'react'
-import Borough from './boroughForm.jsx'
+import BoroughForm from './boroughForm.jsx'
+import UserInfoForm from './userInfoForm.jsx'
 
 const Preferences = () => {
   return (
     <div>
       <div>ITSA ME: Preferences</div>
-      <Borough />
+      <BoroughForm />
+      <UserInfoForm />
     </div>
   )
 }
