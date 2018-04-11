@@ -1,6 +1,7 @@
 const User = require('./user')
 const Matches = require('./matches')
 const Message = require('./message')
+const Pair = require('./pair')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -17,6 +18,9 @@ User.hasMany(Matches, {foreignKey: 'selector'})
 Message.belongsTo(User, {foreignKey: 'from'})
 Message.belongsTo(User, {foreignKey: 'to'})
 Matches.belongsTo(User, {foreignKey: 'selected'})
+Pair.belongsTo(User, {foreignKey: 'userId'})
+Pair.belongsTo(User, {foreignKey: 'suitor1'})
+Pair.belongsTo(User, {foreignKey: 'suitor2'})
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -27,5 +31,6 @@ Matches.belongsTo(User, {foreignKey: 'selected'})
 module.exports = {
   User,
   Message,
-  Matches
+  Matches,
+  Pair
 }
