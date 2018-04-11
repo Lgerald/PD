@@ -7,3 +7,4 @@ npm-debug.log
 yarn-error.log
 client/Fire/service-key.json
 yarn.lock
+package-lock.json
