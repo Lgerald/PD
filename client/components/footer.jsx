@@ -1,43 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
-import Paper from 'material-ui/Paper';
-import MatchHome from 'material-ui/svg-icons/action/thumbs-up-down';
-import ChatHome from 'material-ui/svg-icons/communication/chat'
-import MySettings from 'material-ui/svg-icons/action/settings'
 
-const Chat = <ChatHome />
-const MatchCenter = <MatchHome />;
-const Settings = <MySettings />
-
-const Style = {
-    position: 'absolute',
-    bottom: 0
-}
-/**
- * A simple example of `BottomNavigation`, with three labels and icons
- * provided. The selected `BottomNavigationItem` is determined by application
- * state (for instance, by the URL).
- */
 const BottomNav = () => {
-        return (
-            <Paper zDepth={1}>
-                <BottomNavigation style={Style}>
-                    <Link to="/home"><BottomNavigationItem
-                        label="settings"
-                        icon={Settings}
-                    /></Link>
-                    <Link to="/matches"><BottomNavigationItem
-                        label="Matches"
-                        icon={MatchCenter}
-                    /></Link>
-                    <Link to="/messages"><BottomNavigationItem
-                        label="messages"
-                        icon={Chat}
-                    /></Link>
-                </BottomNavigation>
-            </Paper>
-        );
+    return (
+        <footer>
+            <Link to="/home">HOME</Link>
+            <Link to="/matches">MATCHES</Link>
+            <Link to="/messages">MESSAGES</Link>
+        </footer>
+    )
 }
 
 export default BottomNav
