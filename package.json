@@ -32,7 +32,6 @@
     "firebase": "^4.12.0",
     "firebase-admin": "^5.11.0",
     "history": "^4.6.3",
-    "material-ui": "^0.20.0",
     "morgan": "^1.8.1",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",

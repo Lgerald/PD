@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
-import Settings from './settings.jsx'
+import Settings from './settings'
 import Preferences from './preferences'
-import Profile from './profile.jsx'
+import Profile from './profile'
 /**
  * COMPONENT
  */
