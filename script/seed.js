@@ -10,7 +10,7 @@
  * Now that you've got the main idea, check it out in practice below!
  */
 const db = require('../server/db')
-const {User, Matches, Messages} = require('../server/db/models')
+const {User, Matches, Pair} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
@@ -38,6 +38,14 @@ async function seed () {
     Matches.create({ Round: 3, selector: 10, selected: 5})
 
   ])
+
+  const pairs = await Promise.all([
+    Pair.create({Round: 1, userId: 2, suitor1: 1, suitor2: 3 }),
+    Pair.create({Round: 1, userId: 3, suitor1: 10, suitor2: 9 }),
+    Pair.create({Round: 2, userId: 2, suitor1: 7, suitor2: 4}),
+    Pair.create({Round: 2, userId: 3, suitor1: 8, suitor2: 5 }),
+    Pair.create({Round: 3, userId: 2, suitor1: 8, suitor2: 5 })
+  ])
   // const messages = await Promise.all([
   //   Messages.create({}),
   //   Messages.create({}),
@@ -51,6 +59,7 @@ async function seed () {
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${matches.length} matches`)
+  console.log(`seeded ${pairs.length} matches`)
   console.log(`seeded successfully`)
 }
 

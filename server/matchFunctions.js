@@ -47,16 +47,6 @@ function createPair(suitor2, suitor1, Round, userId){
 
 addPersonToMatches(2, 5)
 
-//
-
-
-
-
-
-
-
-
-
 // //POST: a match
 // router.post('/:user/:suitor', (req, res, next) => {
 //     const { user, suitor } = req.params

@@ -42,6 +42,9 @@ const User = db.define('user', {
   },
   image: {
     type: Sequelize.STRING
+  },
+  sex: {
+    type: Sequelize.ENUM('Male', 'Female')
   }
 
 })
