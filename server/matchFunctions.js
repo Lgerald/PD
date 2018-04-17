@@ -12,6 +12,10 @@ function addPersonToMatches(selector, selected, Round = 1){
 }
 
 function checkForPairs(createdMatch){
+    //need to find one but also check for ourselves in their matches at the same roundd
+    // leave peeple in the matches - only updating their round or removing them
+    // on reject - need to remove from matches and from the pairs (but, if we've already produced a pair, leave an "impotent pair" up for user continuity)
+    // add  bool to match schema to mark a match for destructions (on my rejection search through my matches for the person who just rejected me) and alter that bool
     Matches.findOne({
         where: {
             selector: createdMatch.selector,
@@ -42,14 +46,6 @@ function createPair(suitor2, suitor1, Round, userId){
 }
 
 addPersonToMatches(2, 5)
-
-
-
-
-
-
-
-
 
 // //POST: a match
 // router.post('/:user/:suitor', (req, res, next) => {
