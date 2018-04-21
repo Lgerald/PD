@@ -9,7 +9,14 @@ const Matches = db.define('matches', {
     hasBeenRejected: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
+    },
+    inPair: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
     }
 })
+
+//selector
+//selected
 
 module.exports = Matches
