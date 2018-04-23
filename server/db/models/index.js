@@ -15,12 +15,16 @@ const Pair = require('./pair')
  *    
  */
 User.hasMany(Matches, {foreignKey: 'me'}) //the person who chose the other
+Matches.belongsTo(User, {foreignKey: 'you'}) // the person who was chosen
+
+Pair.belongsTo(User, {foreignKey: 'userId'})
+Pair.belongsTo(User, {as: 'suit1', foreignKey: 'suitor1'})
+Pair.belongsTo(User, {as: 'suit2', foreignKey: 'suitor2'})
+User.hasMany(Pair)
+//Pair.hasMany(User)
+
 Message.belongsTo(User, {foreignKey: 'from'})
 Message.belongsTo(User, {foreignKey: 'to'})
-Matches.belongsTo(User, {foreignKey: 'you'}) // the person who was chosen
-Pair.belongsTo(User, {foreignKey: 'userId'})
-Pair.belongsTo(User, {foreignKey: 'suitor1'})
-Pair.belongsTo(User, {foreignKey: 'suitor2'})
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
