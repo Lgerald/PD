@@ -4,9 +4,11 @@ const Op = Sequelize.Op
 
 
 //creates a new match
-function addPersonToMatches(selector, selected, Round = 1){
-    Matches.create({ selector, selected, Round })
+function addPersonToMatches(me, you, Round = 1){
+    //we need a before create check for pairs sort of thing
+    Matches.create({me, you})
     .then(newMatch => {
+        console.log("???", newMatch)
         checkForPairs(newMatch)
     })
     .catch(err => console.error(err))
@@ -14,20 +16,25 @@ function addPersonToMatches(selector, selected, Round = 1){
 
 
 //loops through matches, and checks if theres one that matches (selector and round). if true --> generate a pair
+// i think its matching itself?
+//yep. its definetly matching itself, this needs to happen (or just be checked before creating the pair)
 function checkForPairs(createdMatch){
     Matches.findOne({
       where: {
-        selector: createdMatch.selector,
+        you: createdMatch.you,
         Round: createdMatch.Round
       }
     })
-      .then(foundMatch => {
+    .then(foundMatch => {
         if (foundMatch) {
-            foundMatch.inPair = true
-            createPair(foundMatch.selected, createdMatch.selected, createdMatch.Round, createdMatch.selector)
+            foundMatch.update({inPair: true})
+            createdMatch.update({inPair: true})
+            createPair(foundMatch.you, createdMatch.you, createdMatch.Round, createdMatch.me)
+        } else {
+            console.log("nothing matches!")
         }
-      })
-      .catch(err => console.error(err)) 
+    })
+    .catch(err => console.error(err))
 }
     //need to find one but also check for ourselves in their matches at the same roundd
     // leave peeple in the matches - only updating their round or removing them
@@ -43,9 +50,9 @@ function downgradeMatch(me, you) {
     })
     .then(downgrade => {
         downgrade.hasBeenRejected = true
-        return downgrade
+        res.json(downgrade)
     })
-    .catch(err => console.error(err)) 
+    .catch(err => console.error(err))
 }
 
 function removePairStatus(me, you) {
@@ -74,20 +81,22 @@ function clearUselessMatch(me) {
         }
     })
     .then(rejects => console.log(rejects))
-    .catch(err => console.error(err)) 
+    .catch(err => console.error(err))
 }
 
 function createPair(suitor2, suitor1, Round, userId){
-    Pair.create({Round, userId, suitor1, suitor2 })
+    Pair.create({Round, userId, suitor1, suitor2})
     .then(createdPair => {
-        console.log("new pair made", createdPair)
+        console.log(createdPair)
     })
     .catch(err => console.error(err))
 }
 
-function removePair(selected) {
+//find all the matches that have been reject and are not in a pair, and remove all
+function removePair(me) {
     Matches.findAll({
         where: {
+            me,
             inPair: false,
             hasBeenRejected: true
         }
@@ -102,22 +111,12 @@ function removePair(selected) {
     })
 }
 
-addPersonToMatches(2, 5)
-
-// //POST: a match
-// router.post('/:user/:suitor', (req, res, next) => {
-//     const { user, suitor } = req.params
-//     Matches.create({ user, suitor })
-//     .then(newMatch => res.json(newMatch))
-//     .catch(next)
-// })
-
-
-
-//add a new unpaired match to the pool of potential match-pairs
-
-
-    //look through all the matches where selectedId != createdMatch.selectedId
-    //AND selectorId == createdMatch.selectorId
-    //AND the round number == createdMatch.Round
-    //if found createPair(foundMatch.id, createdMatch.id, createdMatch.Round, createdMatch.selectorId)
+module.exports = {
+    addPersonToMatches,
+    checkForPairs,
+    downgradeMatch,
+    removePairStatus,
+    removePair,
+    clearUselessMatch,
+    createPair
+}

@@ -7,6 +7,8 @@ const Pair = db.define('pair', {
     }
 })
 
+
+
 module.exports = Pair
 //user
 //suitor1
